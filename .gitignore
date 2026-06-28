@@ -1,0 +1,42 @@
+﻿build/
+out/
+.vs/
+.claude/
+
+# Binaries
+*.exe
+*.obj
+*.pdb
+*.ilk
+*.dll
+
+# Data & binary files
+*.db
+*.db-shm
+*.db-wal
+*.pcd
+
+# ML models
+*.onnx
+*.pt
+
+# Videos & media
+*.mp4
+*.MP4
+*.avi
+*.wmv
+
+# Datasets
+dataset/
+dataset_v2/
+runs/
+
+# Node
+AdminApp/node_modules/
+
+# Misc
+*.zip
+*.pptx
+*.docx
+textures/
+worlds/
