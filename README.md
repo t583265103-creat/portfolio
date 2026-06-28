@@ -6,26 +6,11 @@ Computer Science student. This repository contains projects in robotics, autonom
 
 ## Autonomous Wheelchair Navigation System
 
-> C++ · Eigen · PCL · OpenCV · Octomap · YOLOv8 · Webots · SQLite
+> C++ · Eigen · PCL · OpenCV · Octomap · YOLOv8 · Webots · React · Node.js · SQLite
 
-Full autonomous navigation system for a wheelchair robot, simulated in Webots. Runs a closed control loop at **100Hz** across 6 sensor types.
+Full autonomous navigation system for a wheelchair robot, simulated in Webots. Includes a real-time navigation core running at **100Hz** and a web dashboard for monitoring sensor data.
 
-**What it does:**
-- Fuses GPS, IMU, LiDAR, Camera, Radar, and Encoder data using **EKF** and **Factor Graph** (sliding window optimization) for real-time localization
-- Plans global routes with **A\*** on an OSM graph and replans locally with **D\*Lite** (incremental, 100ms cycle)
-- Builds a live **3D Octomap** + 2D costmap from LiDAR scans for obstacle avoidance
-- Tracks dynamic objects with **Hungarian Algorithm** + **ICP** across a multi-threaded Producer-Consumer pipeline (11 workers)
-
-**[/](.) — C++ navigation core** | **[/AdminApp](AdminApp) — React + Node.js monitoring dashboard**
-
----
-
-## AdminApp — Sensor Monitoring Dashboard
-
-> React · Node.js · Express · SQLite · Recharts · Vite
-
-Web dashboard for monitoring sensor frames collected during simulation.
-
-- Live frame browser with per-sensor filtering
-- Confidence visualization per detection
-- REST API backed by SQLite frame database
+- Fused GPS, IMU, LiDAR, Camera, Radar, and Encoder data using **EKF** and **Factor Graph** (sliding window optimization) for real-time localization
+- Planned global routes with **A\*** on an OSM graph and replanned locally with **D\*Lite** (incremental, 100ms cycle)
+- Built a live **3D Octomap** + 2D costmap from LiDAR scans for obstacle avoidance, and tracked dynamic objects with **Hungarian Algorithm** + **ICP**
+- Designed a multi-threaded Producer-Consumer architecture (11 workers) and a **React + Node.js** monitoring dashboard backed by SQLite
